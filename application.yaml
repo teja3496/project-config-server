@@ -1,0 +1,23 @@
+spring:
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    initialization-mode: always
+  jpa:
+    dialect-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    defer-datasource-initialization: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance:
+      hostName: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
